@@ -15,9 +15,15 @@
  */
 #include <iostream>
 #include <slist.h>
+#include <stringsupport.h>
+#include <string.h>
+
+//#define TESTLIST
+#define TESTSTRING
 
 int main()
 {
+#ifdef TESTLIST
 	int loop = 1, choice = 0, data = 0;
 	slist *list = NULL;
 	while (loop) {
@@ -43,5 +49,31 @@ int main()
 		}
 		list->display();
 	}
+	delete list;
+#endif
+#ifdef TESTSTRING
+	char input[1000];
+	list<string> printlist;
+	list<string>::iterator it;
+
+	Stringsupport *stringobj = new Stringsupport();
+	memset(input, 0, sizeof(char) * 1000);
+
+	cout << "Enter string\n";
+	cin >> input;
+	//if (stringobj->is_polindrome(input)) {
+	//	cout << "Given string is polindrome\n";
+	//} else {
+	//	cout << "Given string is not polindrome\n";
+	//}
+	printlist = stringobj->find_possible_polindormes(input);
+	it = printlist.begin();
+	int count = 0;
+	while (it != printlist.end()) {
+		string poli = (string)(*it);
+		cout << poli.c_str() << "\t" << ++count << "\n";
+		it++;
+	}
+#endif
 	return 0;
 }
