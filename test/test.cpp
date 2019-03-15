@@ -17,9 +17,12 @@
 #include <slist.h>
 #include <stringsupport.h>
 #include <string.h>
-
+#include <sort.h>
+#include <stdlib.h>
+ 
 //#define TESTLIST
-#define TESTSTRING
+//#define TESTSTRING
+#define SORT
 
 int main()
 {
@@ -74,6 +77,20 @@ int main()
 		cout << poli.c_str() << "\t" << ++count << "\n";
 		it++;
 	}
+#endif
+#ifdef SORT
+	int *arr;
+	int len;
+	cout << "Enter array length\n";
+	cin >> len;
+	arr = static_cast<int*>(malloc(sizeof(int) * len));
+	cout << "Enter the numbers to be sorted\n";
+		for (int i = 0; i < len; i++)
+			cin >> arr[i];
+	cout << "Instantiating Sort Helper\n";
+	sortHelper* sort = new sortHelper(arr, len);
+	cout << "Doing Bubble Sort\n";
+	sort->sort(BUBBLE);
 #endif
 	return 0;
 }

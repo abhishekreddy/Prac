@@ -1,0 +1,9 @@
+To Compile the lib and app
+use build.sh
+
+./build.sh
+
+the app will installed in out directory
+
+To Run the app export LD_LIBRARY_PATH to the out directory.
+
