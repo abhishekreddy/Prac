@@ -91,6 +91,20 @@ void sortHelper::sort(sortType type)
 		} while(isSwapped);
 		break;
 	}
+	case INSERTION:
+	{
+		PRINT_ARRAY(arr, len);
+		for (int i = 0; i < len; i++)
+		{
+			for (int j = i; j > 0; j--)
+			{
+				if (arr[j-1] > arr[j])
+					swap(&arr[j-1], &arr[j]);
+			}
+			PRINT_ARRAY(arr, len); 
+		}
+		break;
+	}
 	default:
 		break;
 	}

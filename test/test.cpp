@@ -91,6 +91,8 @@ int main()
 	sortHelper* sort = new sortHelper(arr, len);
 	cout << "Doing Bubble Sort\n";
 	sort->sort(BUBBLE);
+	cout << "Doing Insertion Sort\n";
+	sort->sort(INSERTION);
 #endif
 	return 0;
 }
