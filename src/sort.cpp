@@ -74,12 +74,12 @@ void sortHelper::sort(sortType type)
 	{
 	case BUBBLE:
 	{
-		PRINT_ARRAY(arr, len);
+		PRINT_ARRAY(arr, m_len);
 		bool isSwapped = false;
 		do
 		{
 			isSwapped = false;
-			for (int i = 0; i < len; i++)
+			for (int i = 0; i < len - 1; i++)
 			{
 				if (arr[i] > arr[i+1])
 				{
@@ -87,7 +87,8 @@ void sortHelper::sort(sortType type)
 					isSwapped = true;
 				}
 			}
-			PRINT_ARRAY(arr, len);
+			len--;
+			PRINT_ARRAY(arr, m_len);
 		} while(isSwapped);
 		break;
 	}
